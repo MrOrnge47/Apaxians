@@ -1,0 +1,36 @@
+/*
+ Name: Connor Capar
+ Date: 4/9/22
+ Description: Convert Apaxian long name to short name by removing same consecutive letters.
+*/
+using System;
+
+namespace Apaxians_CaparC
+{
+    class Apaxians
+    {
+        static void Main(string[] args)
+        {
+            //Store input
+            string originalname = Console.ReadLine();
+
+            //Start to create edited name
+            string editedname = originalname[0].ToString();
+            char currentletter = originalname[0];
+
+            //Check originalname to remove duplicate letters next to each other
+            for (int i = 0; i < originalname.Length; i++)
+            {
+                char letter = originalname[i];
+                if (letter != currentletter)
+                {
+                    editedname += letter;
+                }
+                currentletter = letter;
+            }
+
+            //Print editedname
+            Console.WriteLine(editedname);
+        }
+    }
+}
